@@ -45,6 +45,7 @@ def createTime(request):
 
         table.append(request.data)
         reference.set(table)
+        return Response()
     except:
         return Response('Some error')
 
@@ -52,7 +53,7 @@ def createTime(request):
 def updateTime(request,id):
     try:
         db.reference("/times/{}/".format(int(id)-1)).update(request.data)
-        return Response('Success')
+        return Response()
     except:
         return Response('Some error')
 
@@ -60,6 +61,6 @@ def updateTime(request,id):
 def deleteTime(request,id):
     try:
         db.reference("/times/{}/".format(int(id)-1)).delete()
-        return Response('Success')
+        return Response()
     except:
         return Response('Some error')
