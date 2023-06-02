@@ -47,7 +47,7 @@ def createTime(request):
         reference.set(table)
         return Response()
     except:
-        return Response('Some error')
+        return Response(request.data)
 
 @api_view(['PUT'])
 def updateTime(request,id):
